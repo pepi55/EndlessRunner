@@ -2,11 +2,9 @@
 using System.Collections;
 
 public class FloorScript : MonoBehaviour {
-	//publics
-	public int scrollSpeed = 5;
-
 	//privates
 	private Vector2 pos = new Vector2();
+	private float levelSize = 12.5f;
 
 	// Use this for initialization
 	void Start () {
@@ -15,10 +13,10 @@ public class FloorScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		pos.x -= scrollSpeed * Time.deltaTime;
+		pos.x -= GlobalStatic.speed * Time.deltaTime;
 
-		if (this.transform.position.x <= -12.5f) {
-			pos.x += 25f;
+		if (this.transform.position.x <= -levelSize) {
+			pos.x += levelSize * 2;
 		}
 
 		this.transform.position = pos;
