@@ -15,7 +15,7 @@ public class FloorScript : MonoBehaviour {
 		pos.x -= GlobalStatic.speed * Time.deltaTime;
 
 		if (this.transform.position.x <= -GlobalStatic.levelSize) {
-			pos.x += GlobalStatic.levelSize * 2;
+			pos.x += GlobalStatic.levelSize * GlobalStatic.numberOfFloors;
 		}
 
 		this.transform.position = pos;

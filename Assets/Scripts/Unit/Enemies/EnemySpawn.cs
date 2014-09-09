@@ -18,19 +18,19 @@ public class EnemySpawn : MonoBehaviour {
 	void Update () {
 		counter += 1 * Time.deltaTime;
 
-		if (counter >= 1) {
-			Spawn();
-
+		if (counter >= GlobalStatic.enemySpawnDelay) {
 			counter = 0;
-		}
+			spawnEnemy = true;
+			GlobalStatic.enemySpawnDelay = Random.Range(1, 5);
 
-		Debug.Log(counter);
+			Spawn();
+		}
 	}
 
 	private void Spawn () {
 		if (spawnEnemy) {
 			enemy = (GameObject)Instantiate(Resources.Load("Prefabs/Enemy/Enemies", typeof(GameObject)),
-			                               new Vector3(GlobalStatic.levelSize + 1, 0, 0),
+			                               new Vector3(GlobalStatic.levelSize, 0, 0),
 			                               Quaternion.identity);
 
 			enemies.Add(enemy);

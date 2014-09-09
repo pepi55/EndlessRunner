@@ -2,14 +2,19 @@
 using System.Collections;
 
 public static class GlobalStatic {
-	//strings
+	//string
 	public static string playerTag = "Player";
 	public static string floorTag = "Floor";
 	public static string enemyTag = "Enemy";
 
-	//ints
-	public static int speed = 5;
+	//int
+	public static int numberOfFloors = 3;
 
-	//floats
+	//float
 	public static float levelSize = 12.5f;
+	public static float enemySpawnDelay = 1.0f;
+	public static float speed = 5.0f;
+
+	//vector4
+	public static Vector4 screenSize = new Vector4(6.5f, 6.0f, -6.5f, -6.0f);
 }
