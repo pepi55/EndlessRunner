@@ -13,4 +13,11 @@ public class EnemyScript : Unit {
 		CheckPosLeft();
 		CheckPosDown();
 	}
+
+	void OnCollisionStay2D (Collision2D col) {
+		if (col.collider.tag == GlobalStatic.playerTag) {
+			Destroy(col.gameObject);
+			Debug.Log("SHREKT.");
+		}
+	}
 }
