@@ -4,7 +4,6 @@ using System.Collections;
 public class FloorScript : MonoBehaviour {
 	//privates
 	private Vector2 pos = new Vector2();
-	private float levelSize = 12.5f;
 
 	// Use this for initialization
 	void Start () {
@@ -15,8 +14,8 @@ public class FloorScript : MonoBehaviour {
 	void Update () {
 		pos.x -= GlobalStatic.speed * Time.deltaTime;
 
-		if (this.transform.position.x <= -levelSize) {
-			pos.x += levelSize * 2;
+		if (this.transform.position.x <= -GlobalStatic.levelSize) {
+			pos.x += GlobalStatic.levelSize * 2;
 		}
 
 		this.transform.position = pos;
