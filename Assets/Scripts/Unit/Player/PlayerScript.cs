@@ -22,7 +22,7 @@ public class PlayerScript : Unit {
 		
 		if (floor != null && Input.GetKeyUp(KeyCode.UpArrow)) {
 			//this.transform.Translate(new Vector2(0, GlobalStatic.speed) * Time.deltaTime);
-			this.rigidbody2D.AddForce(new Vector2(0, GlobalStatic.speed * 100));
+			this.rigidbody2D.AddForce(new Vector2(0, GlobalStatic.speed * 50));
 		}
 
 		CheckPosUp();

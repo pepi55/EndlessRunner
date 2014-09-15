@@ -8,18 +8,28 @@ public class Unit : MonoBehaviour {
 	//private
 	private Vector2 pos = new Vector2();
 
-	void OnCollisionEnter2D (Collision2D col) {
-		if (col.collider.tag == GlobalStatic.floorTag) {
+	/*void OnCollisionEnter2D (Collision2D col) {
+		if (floor == null && col.collider.tag == GlobalStatic.floorTag) {
 			floor = (GameObject)col.collider.gameObject;
 			
 			this.transform.parent = floor.transform;
 		}
-	}
+	}*/
 	
 	void OnCollisionExit2D (Collision2D col) {
 		if (col.collider.gameObject.transform == transform.parent) {
 			this.transform.parent = null;
 			floor = null;
+		}
+	}
+
+	void OnCollisionStay2D (Collision2D col) {
+		if (col.collider.tag == GlobalStatic.floorTag) {
+			if (floor != null) {
+				floor = (GameObject)col.collider.gameObject;
+			}
+
+			this.transform.parent = col.collider.gameObject.transform;
 		}
 	}
 
