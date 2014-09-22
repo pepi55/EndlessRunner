@@ -16,16 +16,16 @@ public class Unit : MonoBehaviour {
 		}
 	}*/
 	
-	void OnCollisionExit2D (Collision2D col) {
+	protected void OnCollisionExit2D (Collision2D col) {
 		if (col.collider.gameObject.transform == transform.parent) {
 			this.transform.parent = null;
 			floor = null;
 		}
 	}
 
-	void OnCollisionStay2D (Collision2D col) {
+	protected virtual void OnCollisionStay2D (Collision2D col) {
 		if (col.collider.tag == GlobalStatic.floorTag) {
-			if (floor != null) {
+			if (floor == null) {
 				floor = (GameObject)col.collider.gameObject;
 			}
 

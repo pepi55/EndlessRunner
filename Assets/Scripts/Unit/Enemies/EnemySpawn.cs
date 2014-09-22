@@ -30,7 +30,7 @@ public class EnemySpawn : MonoBehaviour {
 	private void Spawn () {
 		if (spawnEnemy) {
 			enemy = (GameObject)Instantiate(Resources.Load("Prefabs/Enemy/Enemies", typeof(GameObject)),
-			                               new Vector3(GlobalStatic.levelSize, 0, 0),
+			                               new Vector3(GlobalStatic.screenSize.x + 5, 0, 0),
 			                               Quaternion.identity);
 
 			enemies.Add(enemy);

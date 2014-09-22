@@ -9,7 +9,7 @@ public class PlayerScript : Unit {
 	void Start () {
 		GlobalStatic.speed = 5;
 	}
-	
+
 	// Update is called once per frame
 	void Update () {
 		if (Input.GetKey(KeyCode.RightArrow)) {
@@ -22,7 +22,7 @@ public class PlayerScript : Unit {
 		
 		if (floor != null && Input.GetKeyUp(KeyCode.UpArrow)) {
 			//this.transform.Translate(new Vector2(0, GlobalStatic.speed) * Time.deltaTime);
-			this.rigidbody2D.AddForce(new Vector2(0, GlobalStatic.speed * 50));
+			this.rigidbody2D.AddForce(new Vector2(0, GlobalStatic.speed * 75));
 		}
 
 		CheckPosUp();
